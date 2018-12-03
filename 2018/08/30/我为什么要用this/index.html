@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Hexo</title>
+  <title>我对this的理解 | Hexo</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -173,29 +173,44 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2018-07-20T08:44:26.000Z" itemprop="datePublished">
-          2018-07-20
+      <time datetime="2018-08-30T08:24:53.000Z" itemprop="datePublished">
+          2018-08-30
       </time>
     
 </span>
-                <h1></h1>
+                <h1>我对this的理解</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>我要跟大家讲一个故事。<br>关于印度米达的故事。</p>
+      		<p>场景 1: 当你需要拿到不同对象中的属性值来执行一段程序之后，通常做法，将对象当作参数显式传递给函数，但是用了 this,我们可以这样写</p>
+<pre><code>function identify() {
+  return this.name.toUpperCase();
+}
+function speak() {
+  var greeting = &quot;Hello, I&apos;m &quot; + identify.call( this ); console.log( greeting );
+}
+var me = {
+  name: &quot;miao&quot;
+};
+var you = {
+  name: &quot;Reader&quot;
+};
+  identify.call( me ); // MIAO
+  identify.call( you ); // READER
+</code></pre><p>speak.call( me ); // Hello, 我是 MIAO speak.call( you ); // Hello, 我是 READER</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2018/07/27/可爱的女程序猿/" style="float: left;">
+    <a class="pull-left" href="/2018/12/03/开到荼靡/" style="float: left;">
         ← 
     </a>
     
     
-    <a class="pull-right" href="/2017/04/24/红了樱桃绿了芭蕉/">
-        毛桃子 →
+    <a class="pull-right" href="/2018/07/27/可爱的女程序猿/">
+         →
     </a>
     
 </nav>
